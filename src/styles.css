@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+/* Target the MDC snackbar container safely */
+.mat-mdc-snack-bar-container.error-snackbar {
+  --mat-snack-bar-container-color: #d32f2f;      /* Background color */
+  --mdc-snackbar-supporting-text-color: #ffffff; /* Message text color */
+  --mat-snack-bar-button-color: #ffffff;         /* Action button text color */
+}
+.mat-mdc-snack-bar-container.success-snackbar {
+  --mat-snack-bar-container-color: #4caf50;      /* Background color */
+  --mdc-snackbar-supporting-text-color: #ffffff; /* Message text color */
+  --mat-snack-bar-button-color: #ffffff;         /* Action button text color */
+}

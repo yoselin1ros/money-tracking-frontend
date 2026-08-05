@@ -19,8 +19,11 @@
     "@angular/material": "^22.1.0",
     "@angular/platform-browser": "^22.1.0",
     "@angular/router": "^22.1.0",
+    "@tailwindcss/postcss": "^4.3.3",
     "moment": "^2.30.1",
+    "postcss": "^8.5.25",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.3.3",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

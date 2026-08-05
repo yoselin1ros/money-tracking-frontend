@@ -1,20 +1,11 @@
-export interface User {
-  id: number;
-  email: string;
-  displayName: string;
-  emailVerified: boolean;
-  preferredCurrency: string;
-}
+import { ApiResponse } from "./api-response.model";
+import { UserResponse } from "./user.model";
 
 export interface LoginResponse {
   accessToken: string;
   expiresIn: number;
   tokenType: string;
-  user: User;
+  user: UserResponse;
 }
 
-export interface ApiResponse {
-  message: string;
-  status: number;
-  data?: LoginResponse;
-}
+export type LoginApiResponse = ApiResponse<LoginResponse>;
