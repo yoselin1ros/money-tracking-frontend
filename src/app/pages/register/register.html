@@ -1,0 +1,78 @@
+<mat-card appearance="outlined">
+  <mat-card-title>
+    <h1 class="text-center">Register</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="register()" class="flex flex-col" autocomplete="off">
+      <mat-form-field appearance="fill" autocomplete="off">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" required>
+      </mat-form-field>
+      <!-- Show errors only if the user interacted with the field and it failed checks -->
+      @if (emailControl?.invalid && (emailControl?.dirty || emailControl?.touched)) {
+      @if (emailControl?.errors?.['required']) {
+      <p class="text-sm text-red-600">Email is required.</p>
+      }
+      @if (emailControl?.errors?.['email'] || emailControl?.errors?.['pattern']) {
+      <p class="text-sm text-red-600">Please enter a valid email address (e.g., name@domain.com).</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" required>
+      </mat-form-field>
+      @if (passwordControl?.invalid && (passwordControl?.dirty || passwordControl?.touched)) {
+      @if (passwordControl?.errors?.['required']) {
+      <p class="text-sm text-red-600">Password is required.</p>
+      }
+      @if (passwordControl?.errors?.['minlength']) {
+      <p class="text-sm text-red-600">Password must be at least 6 characters long.</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput formControlName="confirmPassword" type="password" required>
+      </mat-form-field>
+      @if (confirmPasswordControl?.invalid && (confirmPasswordControl?.dirty || confirmPasswordControl?.touched)) {
+      @if (confirmPasswordControl?.errors?.['required']) {
+      <p class="text-sm text-red-600">Confirm Password is required.</p>
+      }
+      @if (confirmPasswordControl?.errors?.['minlength']) {
+      <p class="text-sm text-red-600">Confirm Password must be at least 6 characters long.</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Display Name</mat-label>
+        <input matInput formControlName="displayName" type="text" required>
+      </mat-form-field>
+      @if (displayNameControl?.invalid && (displayNameControl?.dirty || displayNameControl?.touched)) {
+      @if (displayNameControl?.errors?.['required']) {
+      <p class="text-sm text-red-600">Display Name is required.</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Preferred Currency</mat-label>
+        <mat-select formControlName="preferredCurrency" required>
+          <mat-option value="BOB">BOB</mat-option>
+          <mat-option value="USD">USD</mat-option>
+          <mat-option value="EUR">EUR</mat-option>
+        </mat-select>
+      </mat-form-field>
+      @if (preferredCurrencyControl?.invalid && (preferredCurrencyControl?.dirty || preferredCurrencyControl?.touched))
+      {
+      @if (preferredCurrencyControl?.errors?.['required']) {
+      <p class="text-sm text-red-600">Preferred Currency is required.</p>
+      }
+      }
+
+      <button mat-raised-button color="primary" type="submit">
+        Sign Up
+      </button>
+      <a href="/login">Already have an account? Log in</a>
+    </form>
+  </mat-card-content>
+</mat-card>

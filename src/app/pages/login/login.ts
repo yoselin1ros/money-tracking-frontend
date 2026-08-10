@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class LoginComponent implements OnInit {
+export class LoginPage implements OnInit {
   form: FormGroup;
   private route = inject(ActivatedRoute);
 

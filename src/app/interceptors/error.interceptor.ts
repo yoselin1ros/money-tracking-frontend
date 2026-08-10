@@ -33,7 +33,7 @@ export const ErrorInterceptor: HttpInterceptorFn = (req, next) => {
             errorMessage = 'Internal Server Error.';
             break;
           default:
-            errorMessage = `Server Error Code: ${error.status}\nMessage: ${error.message}`;
+            errorMessage = `Server Error Code: ${error.status}\nMessage: ${error.error.message}`;
         }
       }
 
@@ -42,7 +42,7 @@ export const ErrorInterceptor: HttpInterceptorFn = (req, next) => {
 
       // Show error message in snackbar
       snackBar.open(errorMessage, 'Close', { 
-        duration: 50000, 
+        duration: 5000, 
         horizontalPosition: 'right',
         verticalPosition: 'top',
         panelClass: ['error-snackbar'] // Optional custom CSS styling
