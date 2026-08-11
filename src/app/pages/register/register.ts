@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,7 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
-export class RegisterPage {
+export class RegisterPage implements OnInit {
   form: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -31,6 +31,12 @@ export class RegisterPage {
       displayName: ['', Validators.required],
       preferredCurrency: ['', Validators.required]
     });
+  }
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigateByUrl('dashboard');
+    }
   }
 
   // Easy getter to access control properties in the template

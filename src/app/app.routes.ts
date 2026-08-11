@@ -18,6 +18,11 @@ export const routes: Routes = [
     component: DashboardPage, 
     canActivate: [authGuard] // Protected route
   },
+  {
+    path: 'accounts',
+    loadComponent: () => import('./pages/accounts/accounts').then(m => m.AccountsPage),
+    canActivate: [authGuard] 
+  },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/dashboard' }
 ];
