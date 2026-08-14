@@ -1,0 +1,54 @@
+@if (loading()) {
+<p>Loading data...</p>
+}
+@else {
+<mat-card appearance="outlined">
+  <mat-card-title>
+    <h1 class="text-center">Create Account</h1>
+  </mat-card-title>
+
+  <mat-card-content>
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()" class="flex flex-col">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" type="text" required>
+      </mat-form-field>
+      @if (f['name']?.invalid && (f['name']?.dirty || f['name']?.touched)) {
+      @if (f['name']?.errors?.['required']) {
+      <p class="text-sm text-red-600">A name is required.</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Initial Balance</mat-label>
+        <input matInput formControlName="initialBalance" type="number" required>
+      </mat-form-field>
+      @if (f['initialBalance']?.invalid && (f['initialBalance']?.dirty || f['initialBalance']?.touched)) {
+      @if (f['initialBalance']?.errors?.['required']) {
+      <p class="text-sm text-red-600">Initial balance is required.</p>
+      }
+      }
+
+      <mat-form-field appearance="fill">
+        <mat-label>Account Type</mat-label>
+        <mat-select formControlName="typeId" required>
+          <mat-option *ngFor="let option of accountTypes" [value]="option.id">
+            {{ option.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      @if (f['typeId']?.invalid && (f['typeId']?.dirty || f['typeId']?.touched))
+      {
+      @if (f['typeId']?.errors?.['required']) {
+      <p class="text-sm text-red-600">Account Type is required.</p>
+      }
+      }
+
+      <button mat-raised-button color="primary" type="submit">
+        Register
+      </button>
+
+    </form>
+  </mat-card-content>
+</mat-card>
+}

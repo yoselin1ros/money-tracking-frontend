@@ -2,16 +2,19 @@ import { Component, OnInit, signal } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { AccountService } from '../../services/account.service';
 import { AccountResponse } from '../../models/account.model';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-accounts',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, MatIconModule, RouterLink, MatButtonModule],
   templateUrl: './accounts.html',
   styleUrl: './accounts.css',
 })
 export class AccountsPage implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'initialBalance', 'currentBalance', 'typeName'];
+  displayedColumns: string[] = ['id', 'name', 'initialBalance', 'currentBalance', 'typeName', 'options'];
 
   accounts: AccountResponse[] = [];
 

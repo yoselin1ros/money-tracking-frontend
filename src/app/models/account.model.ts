@@ -1,7 +1,6 @@
 import { ApiResponse } from "./api-response.model";
 
 export interface AccountRequest {
-  userId: number;
   name: string;
   typeId: number;
   initialBalance: number;
@@ -17,3 +16,4 @@ export interface AccountResponse {
 }
 
 export type AccountsApiResponse = ApiResponse<AccountResponse[]>;
+export type AccountApiResponse = ApiResponse<AccountResponse>;
