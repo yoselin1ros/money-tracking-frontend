@@ -1,0 +1,72 @@
+.login-card {
+  margin-top: 100px;
+  padding: 40px;
+  width: 400px;
+  border-radius: 12px;
+  border: 1px solid #D1D5DB;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-card-avatar {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+p {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 24px;
+}
+
+.login-form-field {
+  --mdc-outlined-text-field-outline-color: #D1D5DB;
+  --mdc-outlined-text-field-container-shape: 6px;
+  --mat-form-field-container-vertical-padding: 10px;
+  --mat-form-field-container-height: 44px;
+}
+
+.mat-mdc-form-field-infix {
+  --mat-form-field-container-height: 41px;
+}
+
+.mdc-text-field--outlined {
+  height: 40px;
+}
+
+.login-form-field input {
+  font-size: 14px;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 16px;
+  padding: 16px 0;
+
+
+  color: #fff;
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+.primary-submit-button {
+  background-color: #3B82F6;
+}
+
+.secondary-submit-button {
+  background-color: white !important;
+  color: #1F2937 !important;
+  border: 1px solid #D1D5DB;
+}
