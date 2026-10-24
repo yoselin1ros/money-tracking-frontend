@@ -9,8 +9,14 @@
 }
 
 .mat-card-avatar {
-  width: 56px;
   height: 56px;
+  margin-bottom: 16px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 56px;
+  object-fit: cover;
   margin-bottom: 16px;
 }
 
@@ -69,4 +75,8 @@ p {
   background-color: white !important;
   color: #1F2937 !important;
   border: 1px solid #D1D5DB;
+}
+
+.mat-mdc-card-content:last-child {
+  padding: 0;
 }

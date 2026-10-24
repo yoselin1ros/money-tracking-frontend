@@ -1,0 +1,72 @@
+.login-card {
+  margin: 100px auto 0;
+  padding: 40px;
+  width: 400px;
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+}
+
+.mat-card-avatar {
+  height: 56px;
+  margin-bottom: 16px;
+}
+
+.logo-image {
+  width: 100px;
+  height: 56px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+.form-subtitle {
+  margin-bottom: 24px;
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.login-form-field {
+  --mdc-outlined-text-field-outline-color: #D1D5DB;
+  --mdc-outlined-text-field-container-shape: 6px;
+  --mat-form-field-container-vertical-padding: 10px;
+  --mat-form-field-container-height: 44px;
+}
+
+.mat-mdc-form-field-infix {
+  --mat-form-field-container-height: 41px;
+}
+
+.mdc-text-field--outlined {
+  height: 40px;
+}
+
+.login-form-field input,
+.login-form-field mat-select {
+  font-size: 14px;
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 16px;
+  padding: 16px 0;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+.primary-submit-button {
+  background-color: #3B82F6;
+}
+
+.mat-mdc-card-content:last-child {
+  padding: 0;
+}

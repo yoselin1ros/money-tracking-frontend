@@ -1,10 +1,14 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" class="login-card">
+  <div class="mat-card-avatar flex justify-center">
+    <img src="https://placehold.co/100x56?text=Hello+World" alt="Logo" class="logo-image">
+  </div>
   <mat-card-title>
     <h1 class="text-center">Register</h1>
   </mat-card-title>
+  <p class="form-subtitle text-center">Create an account to start tracking your money</p>
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="register()" class="flex flex-col" autocomplete="off">
-      <mat-form-field appearance="fill" autocomplete="off">
+      <mat-form-field appearance="outline" class="login-form-field" autocomplete="off">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" type="email" required>
       </mat-form-field>
@@ -18,7 +22,7 @@
       }
       }
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline" class="login-form-field">
         <mat-label>Password</mat-label>
         <input matInput formControlName="password" type="password" required>
       </mat-form-field>
@@ -31,7 +35,7 @@
       }
       }
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline" class="login-form-field">
         <mat-label>Confirm Password</mat-label>
         <input matInput formControlName="confirmPassword" type="password" required>
       </mat-form-field>
@@ -44,7 +48,7 @@
       }
       }
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline" class="login-form-field">
         <mat-label>Display Name</mat-label>
         <input matInput formControlName="displayName" type="text" required>
       </mat-form-field>
@@ -54,7 +58,7 @@
       }
       }
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline" class="login-form-field">
         <mat-label>Preferred Currency</mat-label>
         <mat-select formControlName="preferredCurrency" required>
           <mat-option value="BOB">BOB</mat-option>
@@ -69,7 +73,7 @@
       }
       }
 
-      <button mat-raised-button color="primary" type="submit">
+      <button mat-flat-button class="submit-button primary-submit-button" type="submit">
         Sign Up
       </button>
       <a href="/login">Already have an account? Log in</a>
